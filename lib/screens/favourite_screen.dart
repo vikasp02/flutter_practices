@@ -38,7 +38,7 @@ class FavouriteScreen extends StatelessWidget {
                   ),
                   trailing: GestureDetector(
                     onTap: () {
-                      fvm.removeByIndex(product['id']);
+                      fvm.removeById(product['id']);
                     },
                     child: Icon(Icons.delete),
                   ),

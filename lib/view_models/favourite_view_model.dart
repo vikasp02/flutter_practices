@@ -1,24 +1,21 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 
 class FavouriteViewModel with ChangeNotifier {
-  final Set<int> favouriteIndexes = {};
+  final Set<int> favouriteIds = {};
 
-  void toggleFavourite(int index) {
-    if (favouriteIndexes.contains(index)) {
-      favouriteIndexes.remove(index);
+  void toggleFavourite(int id) {
+    if (favouriteIds.contains(id)) {
+      favouriteIds.remove(id);
     } else {
-      favouriteIndexes.add(index);
+      favouriteIds.add(id);
     }
-    notifyListeners(); // notifies all listening widgets to rebuild
-    log('favouriteList: ${favouriteIndexes}');
-  }
-
-  void removeByIndex(int index) {
-    favouriteIndexes.remove(index);
     notifyListeners();
   }
 
-  bool isFavourite(int index) => favouriteIndexes.contains(index);
+  void removeById(int id) {
+    favouriteIds.remove(id);
+    notifyListeners();
+  }
+
+  bool isFavourite(int id) => favouriteIds.contains(id);
 }

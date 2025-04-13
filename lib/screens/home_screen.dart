@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practices/api_services/api_service.dart';
+import 'package:practices/screens/favourite_screen_consumer.dart';
 import 'package:practices/view_models/favourite_view_model.dart';
 import 'package:provider/provider.dart';
-
-import 'favourite_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -46,7 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (ctx) => FavouriteScreen(allProducts: products),
+                      builder: (ctx) =>
+                          FavouriteScreenConsumer(allProducts: products),
                     ),
                   );
                 },
